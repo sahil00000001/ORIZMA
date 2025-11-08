@@ -43,7 +43,7 @@
   --chart-3: 45 93% 47%;
   --chart-4: 173 80% 40%;
   --chart-5: 340 82% 52%;
-  --font-sans: Open Sans, sans-serif;
+  --font-sans: Space Grotesk, system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
@@ -93,38 +93,38 @@
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
-  --background: 240 6% 8%;
-  --foreground: 240 4% 96%;
-  --border: 240 5% 16%;
-  --card: 240 5% 10%;
-  --card-foreground: 240 4% 94%;
-  --card-border: 240 5% 13%;
-  --sidebar: 240 5% 12%;
-  --sidebar-foreground: 240 4% 92%;
-  --sidebar-border: 240 5% 15%;
-  --sidebar-primary: 262 83% 58%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 6% 16%;
-  --sidebar-accent-foreground: 240 4% 90%;
-  --sidebar-ring: 262 83% 58%;
-  --popover: 240 5% 14%;
-  --popover-foreground: 240 4% 90%;
-  --popover-border: 240 5% 17%;
-  --primary: 262 83% 58%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 6% 18%;
-  --secondary-foreground: 240 4% 88%;
-  --muted: 240 5% 16%;
-  --muted-foreground: 240 4% 62%;
-  --accent: 240 6% 15%;
-  --accent-foreground: 240 4% 88%;
-  --destructive: 0 84% 48%;
-  --destructive-foreground: 0 0% 98%;
-  --input: 240 6% 24%;
-  --ring: 262 83% 58%;
-  --chart-1: 262 83% 68%;
-  --chart-2: 210 92% 65%;
-  --chart-3: 45 93% 67%;
+  --background: 220 20% 4%;
+  --foreground: 210 40% 98%;
+  --border: 220 15% 12%;
+  --card: 220 18% 7%;
+  --card-foreground: 210 40% 96%;
+  --card-border: 220 15% 10%;
+  --sidebar: 220 18% 6%;
+  --sidebar-foreground: 210 40% 95%;
+  --sidebar-border: 220 15% 10%;
+  --sidebar-primary: 210 100% 60%;
+  --sidebar-primary-foreground: 220 20% 5%;
+  --sidebar-accent: 220 15% 12%;
+  --sidebar-accent-foreground: 210 40% 95%;
+  --sidebar-ring: 210 100% 60%;
+  --popover: 220 18% 8%;
+  --popover-foreground: 210 40% 95%;
+  --popover-border: 220 15% 12%;
+  --primary: 210 100% 60%;
+  --primary-foreground: 220 20% 5%;
+  --secondary: 220 15% 15%;
+  --secondary-foreground: 210 40% 95%;
+  --muted: 220 15% 14%;
+  --muted-foreground: 210 20% 65%;
+  --accent: 45 100% 55%;
+  --accent-foreground: 220 20% 5%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 220 15% 18%;
+  --ring: 210 100% 60%;
+  --chart-1: 210 100% 60%;
+  --chart-2: 270 95% 65%;
+  --chart-3: 45 100% 55%;
   --chart-4: 173 80% 60%;
   --chart-5: 340 82% 72%;
   --shadow-2xs: 0px 2px 0px 0px hsl(240 5% 0% / 0.10);
@@ -196,6 +196,46 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
+
+  /* Neon glow animation for ORIZMA */
+  @keyframes neon-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.3), 0 0 15px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.6), 0 0 20px hsl(var(--primary) / 0.4), 0 0 30px hsl(var(--primary) / 0.3);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .neon-glow {
+    animation: neon-glow 3s ease-in-out infinite;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(220 25% 6%), hsl(var(--background)));
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
+  }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
