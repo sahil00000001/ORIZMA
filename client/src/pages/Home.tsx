@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, Award, Truck, Headphones, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import { useLocation } from "wouter";
 
-import tv32 from "@assets/generated_images/32-inch_TV_product_shot_6cb4aeaf.png";
-import tv43 from "@assets/generated_images/43-inch_TV_product_shot_758a16b4.png";
-import tv55 from "@assets/generated_images/55-inch_TV_product_shot_ff8031e3.png";
-import tv65 from "@assets/generated_images/65-inch_TV_product_shot_7baf4268.png";
+import tv32 from "@assets/generated_images/32-inch_TV_with_glowing_effects_063dc3bc.png";
+import tv43 from "@assets/generated_images/43-inch_TV_with_dramatic_lighting_472f3e37.png";
+import tv55 from "@assets/generated_images/55-inch_TV_with_energy_glow_82d2d883.png";
+import tv65 from "@assets/generated_images/65-inch_TV_with_radiant_glow_5f8e6fd0.png";
 
 export default function Home() {
   const [, setLocation] = useLocation();

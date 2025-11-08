@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@assets/orizma-logo.png";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,8 +32,8 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover-elevate" data-testid="link-logo">
-            ORIZMA
+          <Link href="/" className="hover:opacity-80 transition-opacity" data-testid="link-logo">
+            <img src={logo} alt="ORIZMA" className="h-8" />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
