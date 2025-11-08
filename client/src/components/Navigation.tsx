@@ -31,22 +31,20 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/">
-            <a className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover-elevate" data-testid="link-logo">
-              ORIZMA
-            </a>
+          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover-elevate" data-testid="link-logo">
+            ORIZMA
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className="text-foreground/80 hover:text-primary transition-colors relative group"
-                  data-testid={`link-${item.label.toLowerCase()}`}
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
-                </a>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-foreground/80 hover:text-primary transition-colors relative group"
+                data-testid={`link-${item.label.toLowerCase()}`}
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
             <Button size="sm" className="hover-elevate active-elevate-2" data-testid="button-contact">
@@ -74,14 +72,14 @@ export default function Navigation() {
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <a
-                    className="block text-foreground/80 hover:text-primary transition-colors py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                    data-testid={`link-mobile-${item.label.toLowerCase()}`}
-                  >
-                    {item.label}
-                  </a>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-foreground/80 hover:text-primary transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                  data-testid={`link-mobile-${item.label.toLowerCase()}`}
+                >
+                  {item.label}
                 </Link>
               ))}
               <Button className="w-full hover-elevate active-elevate-2" data-testid="button-mobile-contact">

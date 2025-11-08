@@ -18,18 +18,18 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4" data-testid="text-footer-products-title">Products</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/products/32"><a className="hover:text-primary transition-colors" data-testid="link-footer-32">32" Series</a></Link></li>
-              <li><Link href="/products/43"><a className="hover:text-primary transition-colors" data-testid="link-footer-43">43" Series</a></Link></li>
-              <li><Link href="/products/55"><a className="hover:text-primary transition-colors" data-testid="link-footer-55">55" Series</a></Link></li>
-              <li><Link href="/products/65"><a className="hover:text-primary transition-colors" data-testid="link-footer-65">65" Series</a></Link></li>
+              <li><Link href="/products/32" className="hover:text-primary transition-colors" data-testid="link-footer-32">32" Series</Link></li>
+              <li><Link href="/products/43" className="hover:text-primary transition-colors" data-testid="link-footer-43">43" Series</Link></li>
+              <li><Link href="/products/55" className="hover:text-primary transition-colors" data-testid="link-footer-55">55" Series</Link></li>
+              <li><Link href="/products/65" className="hover:text-primary transition-colors" data-testid="link-footer-65">65" Series</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4" data-testid="text-footer-company-title">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about"><a className="hover:text-primary transition-colors" data-testid="link-footer-about">About Us</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-primary transition-colors" data-testid="link-footer-contact">Contact</a></Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors" data-testid="link-footer-about">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors" data-testid="link-footer-contact">Contact</Link></li>
             </ul>
           </div>
 

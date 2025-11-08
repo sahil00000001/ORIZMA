@@ -7,13 +7,32 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft } from "lucide-react";
-import { products } from "@/lib/productData";
+import { useQuery } from "@tanstack/react-query";
+import type { Product } from "@shared/schema";
 
 export default function ProductDetail() {
   const [, params] = useRoute("/product/:id");
   const [, setLocation] = useLocation();
   
-  const product = products.find((p: typeof products[0]) => p.id === params?.id);
+  const { data: product, isLoading } = useQuery<Product>({
+    queryKey: ["/api/products", params?.id],
+    queryFn: async () => {
+      const response = await fetch(`/api/products/${params?.id}`);
+      if (!response.ok) throw new Error("Failed to fetch product");
+      return response.json();
+    },
+    enabled: !!params?.id,
+  });
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg">Loading product...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
