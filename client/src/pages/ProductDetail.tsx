@@ -1,38 +1,18 @@
 import { useRoute, useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppCarousel from "@/components/AppCarousel";
 import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import type { Product } from "@shared/schema";
+import { products } from "@/lib/productData";
 
 export default function ProductDetail() {
   const [, params] = useRoute("/product/:id");
   const [, setLocation] = useLocation();
   
-  const { data: product, isLoading } = useQuery<Product>({
-    queryKey: ["/api/products", params?.id],
-    queryFn: async () => {
-      const response = await fetch(`/api/products/${params?.id}`);
-      if (!response.ok) throw new Error("Failed to fetch product");
-      return response.json();
-    },
-    enabled: !!params?.id,
-  });
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-lg">Loading product...</p>
-        </div>
-      </div>
-    );
-  }
+  const product = products.find((p) => p.id === params?.id);
 
   if (!product) {
     return (
@@ -49,18 +29,21 @@ export default function ProductDetail() {
 
   const featureIcons: Record<string, any> = {
     "Built in Wi-Fi": Wifi,
+    "Built in Wi-Fi & BT": Wifi,
     "BT Remote with Voice Assistant": Mic,
     "Bezel less design": Tv,
     "Frameless Design": Tv,
     "Dolby Audio": Volume2,
     "Google Play": Smartphone,
+    "Google TV": Tv,
     "4K UHD HDR 10": Monitor,
+    "HD": Monitor,
+    "FHD": Monitor,
   };
 
   const productFeatures = product.features.map((f: string) => ({
     icon: featureIcons[f] || Tv,
     title: f,
-    description: `Premium ${f.toLowerCase()} for enhanced viewing experience.`,
   }));
 
   return (
@@ -119,7 +102,7 @@ export default function ProductDetail() {
                 <div className="flex items-center gap-4 pb-4 border-b border-border">
                   <div>
                     <p className="text-sm text-muted-foreground">Screen Size</p>
-                    <p className="text-lg font-semibold" data-testid="text-screen-size">{product.size}</p>
+                    <p className="text-lg font-semibold" data-testid="text-screen-size">{product.screenSize}</p>
                   </div>
                   <div className="h-8 w-px bg-border" />
                   <div>
@@ -167,12 +150,18 @@ export default function ProductDetail() {
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center" data-testid="text-apps-title">
-              Supported Streaming Apps
+              Supported Apps
             </h2>
-            <p className="text-center text-muted-foreground mb-8">
-              Access your favorite content with built-in app support
-            </p>
-            <AppCarousel />
+            <div className="flex flex-wrap justify-center gap-4">
+              {product.apps.map((app, idx) => (
+                <div
+                  key={idx}
+                  className="px-6 py-3 rounded-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 text-sm font-semibold hover:border-primary/30 transition-all duration-300"
+                >
+                  {app}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

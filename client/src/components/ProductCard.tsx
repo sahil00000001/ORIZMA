@@ -2,95 +2,101 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { Wifi, Mic, Tv, MonitorSpeaker } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface ProductCardProps {
   name: string;
   price: string;
   image: string;
-  size: string;
+  screenSize: string;
   resolution: string;
   tier: "PRO" | "PRIME" | "MAX" | "GT";
   features: string[];
+  apps: string[];
   onClick?: () => void;
+  index?: number;
 }
 
 const tierColors = {
-  PRO: "bg-secondary",
-  PRIME: "bg-chart-4",
-  MAX: "bg-chart-2",
-  GT: "bg-accent",
-};
-
-const featureIcons: Record<string, any> = {
-  wifi: Wifi,
-  voice: Mic,
-  display: Tv,
-  audio: MonitorSpeaker,
+  PRO: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  PRIME: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+  MAX: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  GT: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
 };
 
 export default function ProductCard({
   name,
   price,
   image,
-  size,
+  screenSize,
   resolution,
   tier,
   features,
+  apps,
   onClick,
+  index = 0,
 }: ProductCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -8 }}
+      className="h-full"
     >
-      <Card className="overflow-hidden group cursor-pointer hover-elevate active-elevate-2" onClick={onClick} data-testid={`card-product-${name.replace(/\s/g, '-')}`}>
-        <div className="relative aspect-video bg-card overflow-hidden">
+      <Card className="overflow-hidden group cursor-pointer h-full flex flex-col bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300" onClick={onClick}>
+        <div className="relative aspect-[4/3] bg-gradient-to-br from-background/50 to-background/30 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5" />
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
           />
-          <Badge className={`absolute top-4 left-4 ${tierColors[tier]}`} data-testid={`badge-tier-${tier}`}>
+          <Badge className={`absolute top-4 right-4 font-bold border ${tierColors[tier]}`}>
             {tier}
           </Badge>
         </div>
 
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2" data-testid={`text-name-${name.replace(/\s/g, '-')}`}>
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
             {name}
           </h3>
-          <div className="flex items-baseline gap-2 mb-4">
-            <span className="text-3xl font-bold text-primary" data-testid={`text-price-${name.replace(/\s/g, '-')}`}>
+          
+          <div className="mb-4">
+            <span className="text-4xl font-bold bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
               {price}
             </span>
           </div>
 
-          <div className="space-y-2 mb-4 text-sm text-muted-foreground">
-            <p data-testid={`text-size-${name.replace(/\s/g, '-')}`}>Screen: {size}</p>
-            <p data-testid={`text-resolution-${name.replace(/\s/g, '-')}`}>Resolution: {resolution}</p>
+          <div className="space-y-1 mb-4 text-sm">
+            <p className="text-muted-foreground">
+              <span className="font-semibold text-foreground/80">Screen:</span> {screenSize}
+            </p>
+            <p className="text-muted-foreground">
+              <span className="font-semibold text-foreground/80">Resolution:</span> {resolution}
+            </p>
           </div>
 
-          <div className="flex gap-2 mb-4 flex-wrap">
-            {features.slice(0, 4).map((feature, idx) => {
-              const Icon = featureIcons[feature] || Tv;
-              return (
-                <div
-                  key={idx}
-                  className="p-2 rounded-md bg-muted/50 hover-elevate"
-                  title={feature}
-                  data-testid={`icon-feature-${idx}`}
-                >
-                  <Icon className="h-4 w-4 text-primary" />
-                </div>
-              );
-            })}
+          <div className="mb-4 flex-grow">
+            <p className="text-xs font-semibold text-muted-foreground mb-2">KEY FEATURES</p>
+            <ul className="space-y-1">
+              {features.slice(0, 3).map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-foreground/70">
+                  <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+              {features.length > 3 && (
+                <li className="text-xs text-muted-foreground ml-6">
+                  +{features.length - 3} more features
+                </li>
+              )}
+            </ul>
           </div>
 
-          <Button className="w-full hover-elevate active-elevate-2" data-testid={`button-details-${name.replace(/\s/g, '-')}`}>
-            View Details
+          <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300">
+            View Full Details
           </Button>
         </div>
       </Card>

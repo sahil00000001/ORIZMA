@@ -5,20 +5,15 @@ import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import type { Product } from "@shared/schema";
+import { products } from "@/lib/productData";
 
 export default function Products() {
   const [, params] = useRoute("/products/:size");
   const [, setLocation] = useLocation();
 
-  const { data: products = [], isLoading } = useQuery<Product[]>({
-    queryKey: ["/api/products"],
-  });
-
   const size = params?.size;
   const filteredProducts = size
-    ? products.filter((p) => p.size.includes(size))
+    ? products.filter((p) => p.size === size)
     : products;
 
   return (
@@ -47,16 +42,17 @@ export default function Products() {
               {size ? `${size}" Series` : "All Products"}
             </h1>
             <p className="text-muted-foreground text-lg" data-testid="text-page-subtitle">
-              {isLoading ? "Loading..." : `${filteredProducts.length} models available`}
+              {filteredProducts.length} models available
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProducts.map((product, index) => (
               <ProductCard
                 key={product.id}
                 {...product}
                 onClick={() => setLocation(`/product/${product.id}`)}
+                index={index}
               />
             ))}
           </div>

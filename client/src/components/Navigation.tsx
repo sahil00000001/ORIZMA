@@ -47,9 +47,6 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-            <Button size="sm" className="hover-elevate active-elevate-2" data-testid="button-contact">
-              Get in Touch
-            </Button>
           </div>
 
           <button
@@ -82,9 +79,6 @@ export default function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Button className="w-full hover-elevate active-elevate-2" data-testid="button-mobile-contact">
-                Get in Touch
-              </Button>
             </div>
           </motion.div>
         )}
