@@ -24,10 +24,10 @@ export default function HeroSection() {
             ORIZMA
           </h1>
           <p className="text-2xl md:text-3xl font-light mb-4 text-foreground/90 tracking-wider">
-            CRAFTED TO ENDURE
+            Experience Entertainment Like Never Before
           </p>
           <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-muted-foreground">
-            Precision. Performance. Trust. Experience the future of home entertainment.
+            Premium TVs designed for the ultimate viewing experience. Stunning visuals, smart features, and cutting-edge technology.
           </p>
         </motion.div>
 
@@ -42,7 +42,7 @@ export default function HeroSection() {
             className="neon-glow px-8 text-lg hover-elevate active-elevate-2"
             data-testid="button-shop-now"
           >
-            Shop Now
+            Explore Our TVs
           </Button>
           <Button
             size="lg"
@@ -50,7 +50,7 @@ export default function HeroSection() {
             className="px-8 text-lg backdrop-blur-md bg-background/20 border-primary/50 hover-elevate active-elevate-2"
             data-testid="button-explore"
           >
-            Explore Collection
+            Learn More
           </Button>
         </motion.div>
       </div>
