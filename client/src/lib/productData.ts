@@ -1,7 +1,15 @@
-import tv32 from "@assets/generated_images/32-inch_TV_with_glowing_effects_063dc3bc.png";
-import tv43 from "@assets/generated_images/43-inch_TV_with_dramatic_lighting_472f3e37.png";
-import tv55 from "@assets/generated_images/55-inch_TV_with_energy_glow_82d2d883.png";
-import tv65 from "@assets/generated_images/65-inch_TV_with_radiant_glow_5f8e6fd0.png";
+import tv32Pro from "@assets/generated_images/32-inch_TV_tropical_sunset_beach_a6c6092b.png";
+import tv32Prime from "@assets/generated_images/32-inch_TV_mountain_landscape_34aa69a5.png";
+import tv32Max from "@assets/generated_images/32-inch_TV_zen_garden_17677ac9.png";
+import tv32Gt from "@assets/generated_images/32-inch_TV_aurora_borealis_a82d546d.png";
+import tv43Pro from "@assets/generated_images/43-inch_TV_African_savanna_sunset_ae298f74.png";
+import tv43Prime from "@assets/generated_images/43-inch_TV_underwater_coral_reef_84b0f363.png";
+import tv43Max from "@assets/generated_images/43-inch_TV_forest_waterfall_8487ef0f.png";
+import tv43Gt from "@assets/generated_images/43-inch_TV_Iceland_waterfall_ab7d59bb.png";
+import tv55Max from "@assets/generated_images/55-inch_TV_Grand_Canyon_sunset_d3cfb720.png";
+import tv55Gt from "@assets/generated_images/55-inch_TV_Maldives_paradise_4e16ab15.png";
+import tv65Max from "@assets/generated_images/65-inch_TV_Swiss_Alps_panorama_9e7a3ece.png";
+import tv65Gt from "@assets/generated_images/65-inch_TV_New_Zealand_fjords_cf2ad756.png";
 
 export interface Product {
   id: string;
@@ -22,7 +30,7 @@ export const products: Product[] = [
     id: "ort32-pro",
     name: "ORT32 PRO",
     price: "₹15,999",
-    image: tv32,
+    image: tv32Pro,
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -42,7 +50,7 @@ export const products: Product[] = [
     id: "ort32-prime",
     name: "ORT32 PRIME",
     price: "₹16,999",
-    image: tv32,
+    image: tv32Prime,
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -63,7 +71,7 @@ export const products: Product[] = [
     id: "ort32-max",
     name: "ORT32 MAX",
     price: "₹18,999",
-    image: tv32,
+    image: tv32Max,
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -84,7 +92,7 @@ export const products: Product[] = [
     id: "ort32-gt",
     name: "ORT32 GT",
     price: "₹20,999",
-    image: tv32,
+    image: tv32Gt,
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -105,7 +113,7 @@ export const products: Product[] = [
     id: "ort43-pro",
     name: "ORT43 PRO",
     price: "₹30,990",
-    image: tv43,
+    image: tv43Pro,
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -125,7 +133,7 @@ export const products: Product[] = [
     id: "ort43-prime",
     name: "ORT43 PRIME",
     price: "₹31,990",
-    image: tv43,
+    image: tv43Prime,
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -146,7 +154,7 @@ export const products: Product[] = [
     id: "ort43-max",
     name: "ORT43 MAX",
     price: "₹33,990",
-    image: tv43,
+    image: tv43Max,
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -167,7 +175,7 @@ export const products: Product[] = [
     id: "ort43-gt",
     name: "ORT43 GT",
     price: "₹35,990",
-    image: tv43,
+    image: tv43Gt,
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -188,7 +196,7 @@ export const products: Product[] = [
     id: "ort55-max",
     name: "ORT55 MAX",
     price: "₹55,999",
-    image: tv55,
+    image: tv55Max,
     size: "55",
     screenSize: '140cm (55")',
     resolution: "4K UHD HDR 10",
@@ -209,7 +217,7 @@ export const products: Product[] = [
     id: "ort55-gt",
     name: "ORT55 GT",
     price: "₹58,999",
-    image: tv55,
+    image: tv55Gt,
     size: "55",
     screenSize: '140cm (55")',
     resolution: "4K UHD HDR 10",
@@ -230,7 +238,7 @@ export const products: Product[] = [
     id: "ort65-max",
     name: "ORT65 MAX",
     price: "₹65,999",
-    image: tv65,
+    image: tv65Max,
     size: "65",
     screenSize: '165cm (65")',
     resolution: "4K UHD HDR 10",
@@ -251,7 +259,7 @@ export const products: Product[] = [
     id: "ort65-gt",
     name: "ORT65 GT",
     price: "₹68,999",
-    image: tv65,
+    image: tv65Gt,
     size: "65",
     screenSize: '165cm (65")',
     resolution: "4K UHD HDR 10",

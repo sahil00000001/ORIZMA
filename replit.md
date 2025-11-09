@@ -5,7 +5,29 @@ ORIZMA is a premium television e-commerce website featuring a stunning, futurist
 
 **Brand Tagline**: "CRAFTED TO ENDURE"
 
-## Recent Changes (November 8, 2025)
+## Recent Changes (November 9, 2025)
+
+### Product Images & Visuals
+- Generated 12 unique, professional product images for each TV model
+- Each image features a TV displaying unique, beautiful scenery (tropical beaches, mountains, zen gardens, aurora borealis, savannas, coral reefs, waterfalls, fjords, etc.)
+- No heavy lightning effects - focused on clean, well-lit product photography with subtle ambient lighting
+- Updated productData.ts to assign unique images to all 12 products (no image repetition)
+
+### Enhanced Product Card Animations
+- Added smooth hover animation to ProductCard component
+- Hover effect creates a subtle gradient glow (blue to gold) around the TV image
+- Enhanced gradient overlay intensifies on hover with smooth 700ms transition
+- Maintains the premium, futuristic aesthetic without overwhelming the design
+
+### TV Comparison Feature
+- Created new Compare page (`/compare`) for side-by-side TV comparison
+- Users can select any 2 TVs from dropdown menus to compare
+- Comparison displays: product images, prices, screen sizes, resolutions, tiers, features, and apps
+- Prevents selecting the same TV twice
+- Includes "Clear Selection" button and intuitive empty state messaging
+- Added "Compare" link to main navigation
+
+## Previous Changes (November 8, 2025)
 
 ### Database & Backend Integration
 - Created PostgreSQL database schema with three tables: `products`, `cart_items`, and `orders`
@@ -52,36 +74,33 @@ ORIZMA is a premium television e-commerce website featuring a stunning, futurist
 
 ### Frontend Pages
 - **Home** (`/`): Hero section, category cards (32", 43", 55", 65"), premium features, brand story
-- **Products** (`/products` or `/products/:size`): Product grid with filtering by size
+- **Products** (`/products` or `/products/:size`): Product grid with filtering by size, unique product images with hover effects
 - **ProductDetail** (`/product/:id`): Detailed product view with specifications, features carousel, add to cart
+- **Compare** (`/compare`): Side-by-side TV comparison with dropdown selectors for any 2 models
 - **About** (`/about`): Brand story and company information (to be implemented)
 - **Contact** (`/contact`): Contact form and information (to be implemented)
 
-## Product Catalog
+## Product Catalog (12 Models with Unique Images)
 
 ### 32" Series (HD 1366x768)
-- **ORT32 PRO** - ₹15,999
-- **ORT32 PRIME** - ₹16,999
-- **ORT32 MAX** - ₹18,999
-- **ORT32 GT** - ₹20,999
+- **ORT32 PRO** - ₹15,999 - Image: Tropical sunset beach
+- **ORT32 PRIME** - ₹16,999 - Image: Mountain landscape
+- **ORT32 MAX** - ₹18,999 - Image: Japanese zen garden
+- **ORT32 GT** - ₹20,999 - Image: Aurora borealis
 
 ### 43" Series (FHD 1920x1080)
-- **ORT43 PRO** - ₹30,990
-- **ORT43 PRIME** - ₹31,990
-- **ORT43 MAX** - ₹33,990
-- **ORT43 GT** - ₹35,990
+- **ORT43 PRO** - ₹30,990 - Image: African savanna sunset
+- **ORT43 PRIME** - ₹31,990 - Image: Underwater coral reef
+- **ORT43 MAX** - ₹33,990 - Image: Forest waterfall
+- **ORT43 GT** - ₹35,990 - Image: Iceland waterfall
 
 ### 55" Series (4K UHD 3840x2160)
-- **ORT55 PRO** - ₹55,990
-- **ORT55 PRIME** - ₹56,990
-- **ORT55 MAX** - ₹58,990
-- **ORT55 GT** - ₹60,990
+- **ORT55 MAX** - ₹55,999 - Image: Grand Canyon sunset
+- **ORT55 GT** - ₹58,999 - Image: Maldives paradise
 
 ### 65" Series (4K UHD 3840x2160)
-- **ORT65 PRO** - ₹75,990
-- **ORT65 PRIME** - ₹76,990
-- **ORT65 MAX** - ₹78,990
-- **ORT65 GT** - ₹80,990
+- **ORT65 MAX** - ₹65,999 - Image: Swiss Alps panorama
+- **ORT65 GT** - ₹68,999 - Image: New Zealand fjords
 
 ## Design System
 
@@ -98,6 +117,7 @@ ORIZMA is a premium television e-commerce website featuring a stunning, futurist
 
 ### Effects
 - Glow effects on hover/focus states
+- Product card hover: Subtle gradient glow (primary to accent) with 700ms smooth transition
 - Glassmorphism with backdrop-blur
 - Smooth animations with Framer Motion
 - Neon gradient borders and text
@@ -107,14 +127,18 @@ ORIZMA is a premium television e-commerce website featuring a stunning, futurist
 - Futuristic, premium, high-tech aesthetic
 - Minimal use of borders, emphasis on elevation and glow
 - Professional product presentation with clean layouts
+- Unique product imagery with natural scenery (no heavy lightning effects)
+- Smooth, subtle hover animations for premium feel
 
 ## Next Steps
 1. ✅ Database schema and API routes created
 2. ✅ Products migrated to database  
-3. ⏳ Frontend integrated with API
-4. ⏳ Shopping cart functionality
-5. ⏳ Checkout flow implementation
-6. ⏳ Admin dashboard for product/order management
-7. ⏳ About and Contact pages
-8. ⏳ Product search and filtering
-9. ⏳ Testing and deployment
+3. ✅ Unique product images generated and integrated
+4. ✅ Product card hover animations implemented
+5. ✅ TV comparison feature created
+6. ⏳ Shopping cart functionality
+7. ⏳ Checkout flow implementation
+8. ⏳ Admin dashboard for product/order management
+9. ⏳ About and Contact pages
+10. ⏳ Product search and filtering
+11. ⏳ Testing and deployment

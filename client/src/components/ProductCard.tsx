@@ -47,11 +47,14 @@ export default function ProductCard({
     >
       <Card className="overflow-hidden group cursor-pointer h-full flex flex-col bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300" onClick={onClick}>
         <div className="relative aspect-[4/3] bg-gradient-to-br from-background/50 to-background/30 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-700" />
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-xl" />
+          </div>
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+            className="relative w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700"
           />
           <Badge className={`absolute top-4 right-4 font-bold border ${tierColors[tier]}`}>
             {tier}
