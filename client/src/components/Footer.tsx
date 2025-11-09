@@ -3,24 +3,24 @@ import logo from "@assets/orizma-logo.png";
 
 export default function Footer() {
   const productLinks = [
-    { label: "8K TVs", href: "/products" },
     { label: "4K TVs", href: "/products" },
     { label: "Smart TVs", href: "/products" },
+    { label: "All Products", href: "/products" },
     { label: "Accessories", href: "/products" },
   ];
 
   const supportLinks = [
     { label: "Contact Us", href: "/contact" },
-    { label: "FAQs", href: "/contact" },
-    { label: "Warranty", href: "/about" },
-    { label: "Setup Guide", href: "/about" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Warranty", href: "/warranty" },
+    { label: "Setup Guide", href: "/setup" },
   ];
 
   const companyLinks = [
     { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/about" },
+    { label: "Careers", href: "/career" },
     { label: "News", href: "/about" },
-    { label: "Sustainability", href: "/about" },
+    { label: "Sustainability", href: "/sustainability" },
   ];
 
   const legalLinks = [

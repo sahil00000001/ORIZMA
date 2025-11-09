@@ -64,7 +64,7 @@ export default function ProductCard({
           </h3>
           
           <div className="mb-4">
-            <span className="text-4xl font-bold bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
+            <span className="text-4xl font-bold text-primary">
               {price}
             </span>
           </div>

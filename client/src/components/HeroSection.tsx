@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/Futuristic_hero_TV_glow_2e1f48a1.png";
+import heroImage from "@assets/generated_images/Realistic_TV_with_nature_scenery_d8aca13d.png";
 
 export default function HeroSection() {
   return (

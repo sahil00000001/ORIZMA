@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import ProductCategoryCard from "@/components/ProductCategoryCard";
 import FeatureCard from "@/components/FeatureCard";
 import BrandStory from "@/components/BrandStory";
+import ComingSoon from "@/components/ComingSoon";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, Award, Truck, Headphones, ShieldCheck, Zap, Sparkles } from "lucide-react";
@@ -80,9 +81,9 @@ export default function Home() {
   ];
 
   const stats = [
-    { value: "8K", label: "Resolution" },
     { value: "120Hz", label: "Refresh Rate" },
     { value: "HDR10+", label: "Technology" },
+    { value: "Dolby", label: "Atmos Audio" },
   ];
 
   return (
@@ -213,6 +214,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ComingSoon />
       <BrandStory />
       <Footer />
     </div>
