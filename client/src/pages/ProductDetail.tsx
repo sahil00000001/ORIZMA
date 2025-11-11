@@ -131,10 +131,7 @@ export default function ProductDetail() {
               </div>
 
               <div className="flex gap-4 mb-8 flex-wrap">
-                <Button size="lg" className="flex-1 neon-glow hover-elevate active-elevate-2" data-testid="button-buy-now">
-                  Buy Now
-                </Button>
-                <Button size="lg" variant="outline" className="flex-1 hover-elevate active-elevate-2" data-testid="button-contact-us">
+                <Button size="lg" variant="outline" className="flex-1 hover-elevate active-elevate-2" onClick={() => setLocation("/contact")} data-testid="button-contact-us">
                   Contact Us
                 </Button>
               </div>

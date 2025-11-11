@@ -8,20 +8,36 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, Award, Truck, Headphones, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import { useLocation } from "wouter";
-
-import tv32 from "@assets/generated_images/TV_tropical_beach_sunset_4baf2927.png";
-import tv43 from "@assets/generated_images/TV_city_skyline_night_28fa1c4c.png";
-import tv55 from "@assets/generated_images/TV_Grand_Canyon_sunset_302127d3.png";
-import tv65 from "@assets/generated_images/TV_tropical_rainforest_canopy_3c5984b6.png";
+import { products } from "@/lib/productData";
 
 export default function Home() {
   const [, setLocation] = useLocation();
 
   const categories = [
-    { size: '32"', image: tv32, modelCount: 4, priceRange: "₹15,999" },
-    { size: '43"', image: tv43, modelCount: 4, priceRange: "₹30,990" },
-    { size: '55"', image: tv55, modelCount: 2, priceRange: "₹55,999" },
-    { size: '65"', image: tv65, modelCount: 2, priceRange: "₹65,999" },
+    { 
+      size: '32"', 
+      images: products.filter(p => p.size === "32").map(p => p.image),
+      modelCount: 4, 
+      priceRange: "₹15,999" 
+    },
+    { 
+      size: '43"', 
+      images: products.filter(p => p.size === "43").map(p => p.image),
+      modelCount: 4, 
+      priceRange: "₹30,990" 
+    },
+    { 
+      size: '55"', 
+      images: products.filter(p => p.size === "55").map(p => p.image),
+      modelCount: 2, 
+      priceRange: "₹55,999" 
+    },
+    { 
+      size: '65"', 
+      images: products.filter(p => p.size === "65").map(p => p.image),
+      modelCount: 2, 
+      priceRange: "₹65,999" 
+    },
   ];
 
   const features = [
@@ -83,7 +99,7 @@ export default function Home() {
   const stats = [
     { value: "60Hz", label: "Refresh Rate" },
     { value: "HDR10+", label: "Technology" },
-    { value: "Dolby", label: "Atmos Audio" },
+    { value: "4K", label: "Reality Comes True" },
   ];
 
   return (

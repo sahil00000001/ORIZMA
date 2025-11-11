@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface ProductCategoryCardProps {
   size: string;
-  image: string;
+  images: string[];
   modelCount: number;
   priceRange: string;
   onClick?: () => void;
@@ -14,11 +15,23 @@ interface ProductCategoryCardProps {
 
 export default function ProductCategoryCard({
   size,
-  image,
+  images,
   modelCount,
   priceRange,
   onClick,
 }: ProductCategoryCardProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length === 0) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [images]);
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -30,15 +43,38 @@ export default function ProductCategoryCard({
         data-testid={`card-category-${size}`}
       >
         <div className="relative aspect-video overflow-hidden bg-card">
-          <img
-            src={image}
-            alt={`${size} ORIZMA TV`}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          />
+          {images && images.length > 0 ? (
+            images.map((image, idx) => (
+              <img
+                key={idx}
+                src={image}
+                alt={`${size} ORIZMA TV ${idx + 1}`}
+                className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500 ${
+                  idx === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+              No images available
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <Badge className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm" data-testid={`badge-models-${size}`}>
-            {modelCount} Models
-          </Badge>
+          
+          {images && images.length > 1 && (
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+              {images.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === currentIndex 
+                      ? "w-8 bg-primary" 
+                      : "w-2 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="p-6">

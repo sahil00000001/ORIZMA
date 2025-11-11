@@ -1,58 +1,55 @@
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Clock, Heart } from "lucide-react";
-import smartwatch from "@assets/generated_images/Premium_smartwatch_product_render_91d56c2d.png";
-import laptop from "@assets/generated_images/Premium_laptop_product_render_e27058f1.png";
-import soundbar from "@assets/generated_images/Premium_soundbar_product_render_44ec2306.png";
+import speaker from "@assets/generated_images/Premium_smart_speaker_product_4c75c008.png";
+import refrigerator from "@assets/generated_images/Premium_refrigerator_product_e3a11ed3.png";
+import washingMachine from "@assets/generated_images/Premium_washing_machine_product_73b124b0.png";
 
 export default function ComingSoon() {
   const upcomingProducts = [
     {
       id: 1,
-      name: "Orizma Watch Pro",
-      category: "Smart Watch",
-      image: smartwatch,
-      launchDate: "Q2 2025",
-      tagline: "Time Reimagined",
+      name: "Orizma Sound Pro",
+      category: "Smart Speaker",
+      image: speaker,
+      tagline: "Sound That Surrounds",
       specs: [
-        "1.9\" AMOLED Display",
-        "7-Day Battery Life",
-        "Health Monitoring",
-        "50+ Workout Modes",
-        "Water Resistant IP68"
+        "360° Premium Audio",
+        "Voice Assistant Built-in",
+        "Multi-Room Sync",
+        "Touch Controls",
+        "Premium Fabric Finish"
       ],
-      highlights: ["Always-On Display", "GPS Tracking", "Premium Build"]
+      highlights: ["Deep Bass", "Crystal Clear", "Smart Home Hub"]
     },
     {
       id: 2,
-      name: "Orizma Book Ultra",
-      category: "Laptop",
-      image: laptop,
-      launchDate: "Q3 2025",
-      tagline: "Power Meets Portability",
+      name: "Orizma Chill Max",
+      category: "Refrigerator",
+      image: refrigerator,
+      tagline: "Freshness Redefined",
       specs: [
-        "15.6\" 4K OLED Display",
-        "Intel Core i9 Processor",
-        "32GB RAM / 1TB SSD",
-        "NVIDIA RTX Graphics",
-        "20-Hour Battery Life"
+        "French Door Design",
+        "Smart Cooling Technology",
+        "Digital Temperature Control",
+        "Energy Efficient",
+        "Spacious Interior"
       ],
-      highlights: ["Thunderbolt 4", "Backlit Keyboard", "Ultra-Thin Design"]
+      highlights: ["Frost-Free", "LED Lighting", "Premium Finish"]
     },
     {
       id: 3,
-      name: "Orizma Sound X",
-      category: "Soundbar",
-      image: soundbar,
-      launchDate: "Q2 2025",
-      tagline: "Cinema-Quality Audio",
+      name: "Orizma Wash Pro",
+      category: "Washing Machine",
+      image: washingMachine,
+      tagline: "Clean Like Never Before",
       specs: [
-        "Dolby Atmos & DTS:X",
-        "11.1.4 Channel System",
-        "Wireless Subwoofer",
-        "HDMI eARC Support",
-        "Voice Assistant Built-in"
+        "Front Load Design",
+        "Smart Wash Programs",
+        "Energy Saving Mode",
+        "Quick Wash Feature",
+        "Large Capacity Drum"
       ],
-      highlights: ["Room Calibration", "4K Pass-through", "Premium Drivers"]
+      highlights: ["Silent Operation", "Digital Display", "Premium Build"]
     }
   ];
 
@@ -97,11 +94,6 @@ export default function ComingSoon() {
               className="group relative"
             >
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover-elevate">
-                <div className="absolute top-4 right-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30">
-                  <Clock className="h-4 w-4 text-primary" />
-                  <span className="text-xs font-semibold text-primary">{product.launchDate}</span>
-                </div>
-
                 <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent z-10" />
                   <img
