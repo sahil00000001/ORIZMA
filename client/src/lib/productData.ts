@@ -1,15 +1,15 @@
-import tv32Pro from "@assets/generated_images/TV_tropical_beach_sunset_4baf2927.png";
-import tv32Prime from "@assets/generated_images/TV_aurora_borealis_display_f1a2aeea.png";
-import tv32Max from "@assets/generated_images/TV_desert_dunes_sunset_ea3bb888.png";
-import tv32Gt from "@assets/generated_images/TV_rainforest_waterfall_scene_455ce811.png";
-import tv43Pro from "@assets/generated_images/TV_city_skyline_night_28fa1c4c.png";
-import tv43Prime from "@assets/generated_images/TV_lavender_fields_Provence_bf6aa066.png";
-import tv43Max from "@assets/generated_images/TV_cherry_blossoms_Japan_e6a39e54.png";
-import tv43Gt from "@assets/generated_images/TV_ocean_waves_crashing_526bc6d3.png";
-import tv55Max from "@assets/generated_images/TV_Grand_Canyon_sunset_302127d3.png";
-import tv55Gt from "@assets/generated_images/TV_snowy_mountain_peaks_4a8cfb31.png";
-import tv65Max from "@assets/generated_images/TV_tropical_rainforest_canopy_3c5984b6.png";
-import tv65Gt from "@assets/generated_images/TV_ocean_sunrise_golden_5288ca4b.png";
+import tv32Pro from "@assets/generated_images/Studio_TV_tropical_beach_88b3d6fb.png";
+import tv32Prime from "@assets/generated_images/Studio_TV_Aurora_Borealis_707135f4.png";
+import tv32Max from "@assets/generated_images/Studio_TV_desert_dunes_6175ddcb.png";
+import tv32Gt from "@assets/generated_images/Studio_TV_rainforest_waterfall_213bc59c.png";
+import tv43Pro from "@assets/generated_images/Studio_TV_city_skyline_8986bd2e.png";
+import tv43Prime from "@assets/generated_images/Studio_TV_lavender_fields_60ab40f5.png";
+import tv43Max from "@assets/generated_images/Studio_TV_cherry_blossoms_2fca2c4f.png";
+import tv43Gt from "@assets/generated_images/Studio_TV_ocean_waves_735c2dff.png";
+import tv55Max from "@assets/generated_images/Studio_TV_Grand_Canyon_33cd81ae.png";
+import tv55Gt from "@assets/generated_images/Studio_TV_snowy_mountains_d3b8cf5e.png";
+import tv65Max from "@assets/generated_images/Studio_TV_tropical_island_0846c596.png";
+import tv65Gt from "@assets/generated_images/Studio_TV_ocean_sunset_1e06798a.png";
 
 export interface Product {
   id: string;
