@@ -1,15 +1,15 @@
-import tv32Pro from "@assets/generated_images/32-inch_TV_tropical_sunset_beach_a6c6092b.png";
-import tv32Prime from "@assets/generated_images/32-inch_TV_mountain_landscape_34aa69a5.png";
-import tv32Max from "@assets/generated_images/32-inch_TV_zen_garden_17677ac9.png";
-import tv32Gt from "@assets/generated_images/32-inch_TV_aurora_borealis_a82d546d.png";
-import tv43Pro from "@assets/generated_images/43-inch_TV_African_savanna_sunset_ae298f74.png";
-import tv43Prime from "@assets/generated_images/43-inch_TV_underwater_coral_reef_84b0f363.png";
-import tv43Max from "@assets/generated_images/43-inch_TV_forest_waterfall_8487ef0f.png";
-import tv43Gt from "@assets/generated_images/43-inch_TV_Iceland_waterfall_ab7d59bb.png";
-import tv55Max from "@assets/generated_images/55-inch_TV_Grand_Canyon_sunset_d3cfb720.png";
-import tv55Gt from "@assets/generated_images/55-inch_TV_Maldives_paradise_4e16ab15.png";
-import tv65Max from "@assets/generated_images/65-inch_TV_Swiss_Alps_panorama_9e7a3ece.png";
-import tv65Gt from "@assets/generated_images/65-inch_TV_New_Zealand_fjords_cf2ad756.png";
+import tv32Pro from "@assets/generated_images/TV_tropical_beach_sunset_4baf2927.png";
+import tv32Prime from "@assets/generated_images/TV_aurora_borealis_display_f1a2aeea.png";
+import tv32Max from "@assets/generated_images/TV_desert_dunes_sunset_ea3bb888.png";
+import tv32Gt from "@assets/generated_images/TV_rainforest_waterfall_scene_455ce811.png";
+import tv43Pro from "@assets/generated_images/TV_city_skyline_night_28fa1c4c.png";
+import tv43Prime from "@assets/generated_images/TV_lavender_fields_Provence_bf6aa066.png";
+import tv43Max from "@assets/generated_images/TV_cherry_blossoms_Japan_e6a39e54.png";
+import tv43Gt from "@assets/generated_images/TV_ocean_waves_crashing_526bc6d3.png";
+import tv55Max from "@assets/generated_images/TV_Grand_Canyon_sunset_302127d3.png";
+import tv55Gt from "@assets/generated_images/TV_snowy_mountain_peaks_4a8cfb31.png";
+import tv65Max from "@assets/generated_images/TV_tropical_rainforest_canopy_3c5984b6.png";
+import tv65Gt from "@assets/generated_images/TV_ocean_sunrise_golden_5288ca4b.png";
 
 export interface Product {
   id: string;

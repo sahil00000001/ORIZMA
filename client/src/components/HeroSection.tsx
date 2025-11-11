@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/Realistic_TV_with_nature_scenery_d8aca13d.png";
+import { useLocation } from "wouter";
+import heroImage from "@assets/generated_images/Hero_TV_banner_mountain_lake_d75e1f45.png";
 
 export default function HeroSection() {
+  const [, setLocation] = useLocation();
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0 gradient-bg">
@@ -41,6 +44,7 @@ export default function HeroSection() {
             size="lg"
             className="neon-glow px-8 text-lg hover-elevate active-elevate-2"
             data-testid="button-shop-now"
+            onClick={() => setLocation("/products")}
           >
             Explore Our TVs
           </Button>

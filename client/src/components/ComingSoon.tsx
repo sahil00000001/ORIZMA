@@ -124,22 +124,7 @@ export default function ComingSoon() {
                     {product.tagline}
                   </p>
 
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-primary" />
-                      Key Specifications
-                    </h4>
-                    <ul className="space-y-2">
-                      {product.specs.map((spec, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                          <span>{spec}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t border-border/50">
+                  <div className="pt-4">
                     <div className="flex flex-wrap gap-2">
                       {product.highlights.map((highlight, i) => (
                         <span

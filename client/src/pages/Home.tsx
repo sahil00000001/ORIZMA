@@ -9,10 +9,10 @@ import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, Award, Truck, Headphones, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import { useLocation } from "wouter";
 
-import tv32 from "@assets/generated_images/32-inch_TV_with_glowing_effects_063dc3bc.png";
-import tv43 from "@assets/generated_images/43-inch_TV_with_dramatic_lighting_472f3e37.png";
-import tv55 from "@assets/generated_images/55-inch_TV_with_energy_glow_82d2d883.png";
-import tv65 from "@assets/generated_images/65-inch_TV_with_radiant_glow_5f8e6fd0.png";
+import tv32 from "@assets/generated_images/TV_tropical_beach_sunset_4baf2927.png";
+import tv43 from "@assets/generated_images/TV_city_skyline_night_28fa1c4c.png";
+import tv55 from "@assets/generated_images/TV_Grand_Canyon_sunset_302127d3.png";
+import tv65 from "@assets/generated_images/TV_tropical_rainforest_canopy_3c5984b6.png";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -37,8 +37,8 @@ export default function Home() {
     },
     {
       icon: Volume2,
-      title: "Dolby Atmos",
-      description: "Immersive 3D audio that puts you right in the middle of the action with cinema-quality sound.",
+      title: "4K Everything Feels Like Real",
+      description: "Experience stunning visual clarity with 4K resolution that brings every detail to life.",
     },
     {
       icon: Wifi,
@@ -81,7 +81,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { value: "120Hz", label: "Refresh Rate" },
+    { value: "60Hz", label: "Refresh Rate" },
     { value: "HDR10+", label: "Technology" },
     { value: "Dolby", label: "Atmos Audio" },
   ];

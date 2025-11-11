@@ -39,7 +39,7 @@ export default function Products() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-page-title">
-              {size ? `${size}" Series` : "All Products"}
+              {size ? `${size}"` : "All Products"}
             </h1>
             <p className="text-muted-foreground text-lg" data-testid="text-page-subtitle">
               {filteredProducts.length} models available
