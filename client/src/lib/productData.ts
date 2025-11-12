@@ -10,8 +10,8 @@ const tv43Gt = "/images/43-gt.png";
 const tv55Max = "/images/55-max.png";
 const tv55Gt = "/images/55-gt.png";
 
-const tv65Max = "/images/65-max.png";
-const tv65Gt = "/images/65-gt.png";
+const tv65Max = "/images/65-Max.png";
+const tv65Gt = "/images/65-GT.png";
 
 const banner = "/images/banner.jpg";
 

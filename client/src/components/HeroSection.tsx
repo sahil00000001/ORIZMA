@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-const heroImage = "/images/Hero_TV_mountain_lake_1f9f3e3d.png";
+const heroImage = "/images/banner.jpg";
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();
