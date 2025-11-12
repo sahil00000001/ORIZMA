@@ -1,15 +1,19 @@
-import tv32Pro from "@assets/generated_images/Studio_TV_tropical_beach_88b3d6fb.png";
-import tv32Prime from "@assets/generated_images/Studio_TV_Aurora_Borealis_707135f4.png";
-import tv32Max from "@assets/generated_images/Studio_TV_desert_dunes_6175ddcb.png";
-import tv32Gt from "@assets/generated_images/Studio_TV_rainforest_waterfall_213bc59c.png";
-import tv43Pro from "@assets/generated_images/Studio_TV_city_skyline_8986bd2e.png";
-import tv43Prime from "@assets/generated_images/Studio_TV_lavender_fields_60ab40f5.png";
-import tv43Max from "@assets/generated_images/Studio_TV_cherry_blossoms_2fca2c4f.png";
-import tv43Gt from "@assets/generated_images/Studio_TV_ocean_waves_735c2dff.png";
-import tv55Max from "@assets/generated_images/Studio_TV_Grand_Canyon_33cd81ae.png";
-import tv55Gt from "@assets/generated_images/Studio_TV_snowy_mountains_d3b8cf5e.png";
-import tv65Max from "@assets/generated_images/Studio_TV_tropical_island_0846c596.png";
-import tv65Gt from "@assets/generated_images/Studio_TV_ocean_sunset_1e06798a.png";
+import tv32Prime from "@assets/generated_images/32-prime.png";
+import tv32Max from "@assets/generated_images/32-max.png";
+import tv32Gt from "@assets/generated_images/32-gt.png";
+
+import tv43Pro from "@assets/generated_images/43-pro.png";
+import tv43Prime from "@assets/generated_images/43-prime.png";
+import tv43Max from "@assets/generated_images/43-max.png";
+import tv43Gt from "@assets/generated_images/43-gt.png";
+
+import tv55Max from "@assets/generated_images/55-max.png";
+import tv55Gt from "@assets/generated_images/55-gt.png";
+
+import tv65Max from "@assets/generated_images/65-Max.png";
+import tv65Gt from "@assets/generated_images/65-GT.png";
+
+import banner from "@assets/generated_images/banner.jpg";
 
 export interface Product {
   id: string;
@@ -26,26 +30,6 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
-    id: "ort32-pro",
-    name: "ORT32 PRO",
-    price: "₹15,999",
-    image: tv32Pro,
-    size: "32",
-    screenSize: '80cm (32")',
-    resolution: "1366 X 768 HD",
-    tier: "PRO",
-    features: [
-      "Built in Wi-Fi",
-      "Remote Control",
-      "Wall Mountable",
-      "Bezel less design",
-      "A Grade Display Panel",
-      "Ultrabright Display",
-      "HD",
-    ],
-    apps: ["Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
-  },
   {
     id: "ort32-prime",
     name: "ORT32 PRIME",
@@ -107,7 +91,15 @@ export const products: Product[] = [
       "HD",
       "BT Remote with Voice Assistant",
     ],
-    apps: ["Google Play", "Google TV", "Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
+    apps: [
+      "Google Play",
+      "Google TV",
+      "Netflix",
+      "Prime Video",
+      "YouTube",
+      "Sony Liv",
+      "Dolby Audio",
+    ],
   },
   {
     id: "ort43-pro",
@@ -190,7 +182,15 @@ export const products: Product[] = [
       "FHD",
       "BT Remote with Voice Assistant",
     ],
-    apps: ["Google Play", "Google TV", "Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
+    apps: [
+      "Google Play",
+      "Google TV",
+      "Netflix",
+      "Prime Video",
+      "YouTube",
+      "Sony Liv",
+      "Dolby Audio",
+    ],
   },
   {
     id: "ort55-max",
@@ -232,7 +232,15 @@ export const products: Product[] = [
       "Ultrabright Display",
       "BT Remote with Voice Assistant",
     ],
-    apps: ["Google Play", "Google TV", "Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
+    apps: [
+      "Google Play",
+      "Google TV",
+      "Netflix",
+      "Prime Video",
+      "YouTube",
+      "Sony Liv",
+      "Dolby Audio",
+    ],
   },
   {
     id: "ort65-max",
@@ -274,6 +282,16 @@ export const products: Product[] = [
       "Ultrabright Display",
       "BT Remote with Voice Assistant",
     ],
-    apps: ["Google Play", "Google TV", "Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
+    apps: [
+      "Google Play",
+      "Google TV",
+      "Netflix",
+      "Prime Video",
+      "YouTube",
+      "Sony Liv",
+      "Dolby Audio",
+    ],
   },
 ];
+
+export { banner };
