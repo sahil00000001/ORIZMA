@@ -1,19 +1,19 @@
-import tv32Prime from "@assets/generated_images/32-prime.png";
-import tv32Max from "@assets/generated_images/32-max.png";
-import tv32Gt from "@assets/generated_images/32-gt.png";
+const tv32Prime = "/images/32-prime.png";
+const tv32Max = "/images/32-max.png";
+const tv32Gt = "/images/32-gt.png";
 
-import tv43Pro from "@assets/generated_images/43-pro.png";
-import tv43Prime from "@assets/generated_images/43-prime.png";
-import tv43Max from "@assets/generated_images/43-max.png";
-import tv43Gt from "@assets/generated_images/43-gt.png";
+const tv43Pro = "/images/43-pro.png";
+const tv43Prime = "/images/43-prime.png";
+const tv43Max = "/images/43-max.png";
+const tv43Gt = "/images/43-gt.png";
 
-import tv55Max from "@assets/generated_images/55-max.png";
-import tv55Gt from "@assets/generated_images/55-gt.png";
+const tv55Max = "/images/55-max.png";
+const tv55Gt = "/images/55-gt.png";
 
-import tv65Max from "@assets/generated_images/65-Max.png";
-import tv65Gt from "@assets/generated_images/65-GT.png";
+const tv65Max = "/images/65-max.png";
+const tv65Gt = "/images/65-gt.png";
 
-import banner from "@assets/generated_images/banner.jpg";
+const banner = "/images/banner.jpg";
 
 export interface Product {
   id: string;

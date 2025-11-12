@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Clock, Heart } from "lucide-react";
-import speaker from "@assets/generated_images/Premium_smart_speaker_product_4c75c008.png";
-import refrigerator from "@assets/generated_images/Premium_refrigerator_product_e3a11ed3.png";
-import washingMachine from "@assets/generated_images/Premium_washing_machine_product_73b124b0.png";
+const speaker = "/images/Premium_smart_speaker_product_4c75c008.png";
+const refrigerator = "/images/Premium_refrigerator_product_e3a11ed3.png";
+const washingMachine = "/images/Premium_washing_machine_product_73b124b0.png";
 
 export default function ComingSoon() {
   const upcomingProducts = [

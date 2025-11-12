@@ -1,5 +1,5 @@
 import ProductCard from '../ProductCard';
-import tv43 from '@assets/generated_images/43-inch_TV_product_shot_758a16b4.png';
+const tv43 = '/images/43-inch_TV_product_shot_758a16b4.png';
 
 export default function ProductCardExample() {
   return (

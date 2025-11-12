@@ -1,5 +1,5 @@
 import ProductCategoryCard from '../ProductCategoryCard';
-import tv32 from '@assets/generated_images/32-inch_TV_product_shot_6cb4aeaf.png';
+const tv32 = '/images/32-inch_TV_product_shot_6cb4aeaf.png';
 
 export default function ProductCategoryCardExample() {
   return (

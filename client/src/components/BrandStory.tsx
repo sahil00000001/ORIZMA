@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import lifestyleImage from "@assets/generated_images/Brand_story_lifestyle_interior_39bb9a97.png";
+const lifestyleImage = "/images/Brand_story_lifestyle_interior_39bb9a97.png";
 
 export default function BrandStory() {
   return (
