@@ -6,18 +6,83 @@ import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
-import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft, Package, Settings, CheckCircle2 } from "lucide-react";
+import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft, Package, Settings, CheckCircle2, MessageSquare, Star, Send } from "lucide-react";
 import { products } from "@/lib/productData";
 import { getProductSpecifications } from "@/lib/productSpecifications";
+import { useToast } from "@/hooks/use-toast";
 
 type TabType = "specifications" | "features" | "in-the-box";
+
+const API_BASE_URL = "https://orizmaapi.onrender.com";
 
 export default function ProductDetail() {
   const [, params] = useRoute("/product/:id");
   const [, setLocation] = useLocation();
   const [activeTab, setActiveTab] = useState<TabType>("specifications");
   
+  const [reviewForm, setReviewForm] = useState({
+    userName: "",
+    rating: 5,
+    comment: "",
+  });
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const { toast } = useToast();
+  
   const product = products.find((p) => p.id === params?.id);
+
+  const handleReviewSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!reviewForm.userName.trim() || !reviewForm.comment.trim()) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in your name and comment",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmittingReview(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/reviews`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productId: product?.id,
+          userName: reviewForm.userName,
+          rating: reviewForm.rating,
+          comment: reviewForm.comment,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Thank you!",
+          description: "Your review has been submitted and is pending approval",
+        });
+        setReviewForm({ userName: "", rating: 5, comment: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: data.message || data.error || "Failed to submit review. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmittingReview(false);
+    }
+  };
 
   if (!product) {
     return (
@@ -242,6 +307,96 @@ export default function ProductDetail() {
               </motion.div>
             </AnimatePresence>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16"
+          >
+            <div className="rounded-2xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 p-8 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
+                    <MessageSquare className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Share Your Experience</h3>
+                    <p className="text-sm text-muted-foreground">Help others make informed decisions</p>
+                  </div>
+                </div>
+
+                <form onSubmit={handleReviewSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Your Name</label>
+                      <input
+                        type="text"
+                        value={reviewForm.userName}
+                        onChange={(e) => setReviewForm({ ...reviewForm, userName: e.target.value })}
+                        disabled={isSubmittingReview}
+                        placeholder="Enter your name"
+                        className="w-full px-4 py-3 rounded-lg bg-background/50 border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        data-testid="input-review-name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold mb-2">Rating</label>
+                      <div className="flex gap-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            onClick={() => setReviewForm({ ...reviewForm, rating: star })}
+                            disabled={isSubmittingReview}
+                            className="group transition-transform hover:scale-110 disabled:cursor-not-allowed"
+                            data-testid={`button-rating-${star}`}
+                          >
+                            <Star
+                              className={`h-8 w-8 transition-all ${
+                                star <= reviewForm.rating
+                                  ? "fill-primary text-primary"
+                                  : "text-muted-foreground/30 group-hover:text-muted-foreground/50"
+                              }`}
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">Your Review</label>
+                    <textarea
+                      value={reviewForm.comment}
+                      onChange={(e) => setReviewForm({ ...reviewForm, comment: e.target.value })}
+                      disabled={isSubmittingReview}
+                      placeholder="Share your thoughts about this product..."
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-lg bg-background/50 border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                      data-testid="textarea-review-comment"
+                    />
+                  </div>
+
+                  <div className="flex justify-end">
+                    <Button
+                      type="submit"
+                      disabled={isSubmittingReview}
+                      size="lg"
+                      className="gap-2 hover-elevate active-elevate-2"
+                      data-testid="button-submit-review"
+                    >
+                      <Send className="h-4 w-4" />
+                      {isSubmittingReview ? "Submitting..." : "Submit Review"}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

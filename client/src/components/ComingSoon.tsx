@@ -1,10 +1,76 @@
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Clock, Heart } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
 const speaker = "/images/Premium_smart_speaker_product_4c75c008.png";
 const refrigerator = "/images/Premium_refrigerator_product_e3a11ed3.png";
 const washingMachine = "/images/Premium_washing_machine_product_73b124b0.png";
 
+const API_BASE_URL = "https://orizmaapi.onrender.com";
+
 export default function ComingSoon() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/emails`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "You've been added to our notification list",
+        });
+        setEmail("");
+      } else {
+        // Handle specific error cases
+        if (response.status === 409 || data.message === "Email already exists") {
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already on our notification list!",
+          });
+          setEmail("");
+        } else {
+          toast({
+            title: "Error",
+            description: data.message || data.error || "Failed to subscribe. Please try again.",
+            variant: "destructive",
+          });
+        }
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const upcomingProducts = [
     {
       id: 1,
@@ -148,16 +214,25 @@ export default function ComingSoon() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Stay updated on our latest innovations and be among the first to experience these groundbreaking products
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-background/50 border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
+              className="flex-1 px-4 py-3 rounded-lg bg-background/50 border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid="input-email-subscription"
             />
-            <button className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity whitespace-nowrap">
-              Notify Me
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid="button-notify-me"
+            >
+              {isSubmitting ? "Subscribing..." : "Notify Me"}
             </button>
-          </div>
+          </form>
         </motion.div>
       </div>
     </section>
