@@ -1,17 +1,29 @@
 import { useRoute, useLocation } from "wouter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
-import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft, Package, Settings, CheckCircle2, MessageSquare, Star, Send } from "lucide-react";
+import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, ArrowLeft, Package, Settings, CheckCircle2, MessageSquare, Star, Send, User } from "lucide-react";
 import { products } from "@/lib/productData";
 import { getProductSpecifications } from "@/lib/productSpecifications";
 import { useToast } from "@/hooks/use-toast";
 
 type TabType = "specifications" | "features" | "in-the-box";
+
+interface Review {
+  _id: string;
+  productId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+  status: string;
+  isVerified: boolean;
+  helpfulCount: number;
+}
 
 const API_BASE_URL = "https://orizmaapi.onrender.com";
 
@@ -26,9 +38,33 @@ export default function ProductDetail() {
     comment: "",
   });
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const { toast } = useToast();
   
   const product = products.find((p) => p.id === params?.id);
+
+  const fetchReviews = async () => {
+    if (!product?.id) return;
+    
+    try {
+      setIsLoadingReviews(true);
+      const response = await fetch(`${API_BASE_URL}/api/reviews?productId=${product.id}`);
+      const data = await response.json();
+      
+      if (data.success) {
+        setReviews(data.data || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch reviews:", error);
+    } finally {
+      setIsLoadingReviews(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, [product?.id]);
 
   const handleReviewSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,6 +102,7 @@ export default function ProductDetail() {
           description: "Your review has been submitted and is pending approval",
         });
         setReviewForm({ userName: "", rating: 5, comment: "" });
+        fetchReviews();
       } else {
         toast({
           title: "Error",
@@ -397,6 +434,79 @@ export default function ProductDetail() {
               </div>
             </div>
           </motion.div>
+
+          {isLoadingReviews ? (
+            <div className="mt-8 text-center py-8">
+              <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent"></div>
+              <p className="mt-4 text-muted-foreground">Loading reviews...</p>
+            </div>
+          ) : reviews.length > 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8"
+            >
+              <h3 className="text-2xl font-bold mb-6">Customer Reviews ({reviews.length})</h3>
+              <div className="space-y-4">
+                {reviews.map((review, index) => (
+                  <motion.div
+                    key={review._id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="rounded-xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 p-6"
+                    data-testid={`review-${index}`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                          <User className="h-6 w-6 text-primary" />
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                          <div>
+                            <h4 className="font-semibold text-lg" data-testid={`review-name-${index}`}>{review.userName}</h4>
+                            <p className="text-xs text-muted-foreground" data-testid={`review-date-${index}`}>
+                              {new Date(review.createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })}
+                            </p>
+                          </div>
+                          <div className="flex gap-1">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <Star
+                                key={star}
+                                className={`h-5 w-5 ${
+                                  star <= review.rating
+                                    ? "fill-primary text-primary"
+                                    : "text-muted-foreground/20"
+                                }`}
+                                data-testid={`review-star-${index}-${star}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <p className="text-foreground leading-relaxed" data-testid={`review-comment-${index}`}>
+                          {review.comment}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <div className="mt-8 text-center py-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/50">
+              <MessageSquare className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
+              <p className="text-muted-foreground">No reviews yet. Be the first to share your experience!</p>
+            </div>
+          )}
         </div>
       </div>
 
