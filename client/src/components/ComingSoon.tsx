@@ -165,6 +165,7 @@ export default function ComingSoon() {
                   <img
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-10">

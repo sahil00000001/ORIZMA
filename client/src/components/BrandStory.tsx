@@ -39,6 +39,7 @@ export default function BrandStory() {
               <img
                 src={lifestyleImage}
                 alt="ORIZMA Lifestyle"
+                loading="lazy"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 pointer-events-none" />

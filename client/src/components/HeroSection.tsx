@@ -9,8 +9,8 @@ export default function HeroSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-background via-background to-background/95">
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-background via-background to-background/95 pt-20">
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="relative w-full max-w-6xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -68,12 +68,6 @@ export default function HeroSection() {
               </Button>
             </motion.div>
           </motion.div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full" />
         </div>
       </div>
     </section>

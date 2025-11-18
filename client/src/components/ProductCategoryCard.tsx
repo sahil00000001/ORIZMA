@@ -49,6 +49,7 @@ export default function ProductCategoryCard({
                 key={idx}
                 src={image}
                 alt={`${size} ORIZMA TV ${idx + 1}`}
+                loading="lazy"
                 className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500 ${
                   idx === currentIndex ? "opacity-100" : "opacity-0"
                 }`}

@@ -6,7 +6,7 @@ export default function ProductCategoryCardExample() {
     <div className="p-8 max-w-sm">
       <ProductCategoryCard
         size='32"'
-        image={tv32}
+        images={[tv32]}
         modelCount={4}
         priceRange="₹15,999"
         onClick={() => console.log('Category clicked')}

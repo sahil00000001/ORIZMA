@@ -54,6 +54,7 @@ export default function ProductCard({
           <img
             src={image}
             alt={name}
+            loading="lazy"
             className="relative w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700"
           />
           <Badge className={`absolute top-4 right-4 font-bold border ${tierColors[tier]}`}>
