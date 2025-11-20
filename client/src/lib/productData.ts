@@ -1,19 +1,18 @@
-const tv32Prime = "/images/32-prime.png";
-const tv32Max = "/images/32-max.png";
-const tv32Gt = "/images/32-gt.png";
+const tv32Pro = "/images/32-pro.webp";
+const tv32Prime = "/images/32-prime.webp";
+const tv32Max = "/images/32-max.webp";
+const tv32Gt = "/images/32-gt.webp";
 
-const tv43Pro = "/images/43-pro.png";
-const tv43Prime = "/images/43-prime.png";
-const tv43Max = "/images/43-max.png";
-const tv43Gt = "/images/43-gt.png";
+const tv43Pro = "/images/43-pro.webp";
+const tv43Prime = "/images/43-prime.webp";
+const tv43Max = "/images/43-max.webp";
+const tv43Gt = "/images/43-gt.webp";
 
-const tv55Max = "/images/55-max.png";
-const tv55Gt = "/images/55-gt.png";
+const tv55Max = "/images/55-max.webp";
+const tv55Gt = "/images/55-gt.webp";
 
-const tv65Max = "/images/65-Max.png";
-const tv65Gt = "/images/65-GT.png";
-
-const banner = "/images/banner.jpg";
+const tv65Max = "/images/65-Max.webp";
+const tv65Gt = "/images/65-GT.webp";
 
 export interface Product {
   id: string;
@@ -30,6 +29,26 @@ export interface Product {
 }
 
 export const products: Product[] = [
+  {
+    id: "ort32-pro",
+    name: "ORT32 PRO",
+    price: "₹15,999",
+    image: tv32Pro,
+    size: "32",
+    screenSize: '80cm (32")',
+    resolution: "1366 X 768 HD",
+    tier: "PRO",
+    features: [
+      "Built in Wi-Fi",
+      "Remote Control",
+      "Wall Mountable",
+      "Bezel less design",
+      "A Grade Display Panel",
+      "Ultrabright Display",
+      "HD",
+    ],
+    apps: ["Netflix", "Prime Video", "YouTube", "Sony Liv", "Dolby Audio"],
+  },
   {
     id: "ort32-prime",
     name: "ORT32 PRIME",
@@ -293,5 +312,3 @@ export const products: Product[] = [
     ],
   },
 ];
-
-export { banner };

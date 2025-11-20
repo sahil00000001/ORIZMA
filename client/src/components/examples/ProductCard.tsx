@@ -1,5 +1,5 @@
 import ProductCard from '../ProductCard';
-const tv43 = '/images/43-inch_TV_product_shot_758a16b4.png';
+const tv43 = '/images/43-inch_TV_product_shot_758a16b4.webp';
 
 export default function ProductCardExample() {
   return (
@@ -8,10 +8,11 @@ export default function ProductCardExample() {
         name="ORT43 MAX"
         price="₹33,990"
         image={tv43}
-        size='109cm (43")'
+        screenSize='109cm (43")'
         resolution="1920 X 1080 FHD"
         tier="MAX"
-        features={['wifi', 'voice', 'display', 'audio']}
+        features={['Built in Wi-Fi', 'Remote Control', 'Wall Mountable']}
+        apps={['Netflix', 'Prime Video', 'YouTube']}
         onClick={() => console.log('Product clicked')}
       />
     </div>

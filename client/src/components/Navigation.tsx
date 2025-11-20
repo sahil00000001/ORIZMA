@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@assets/orizma-logo.png";
+
+const logo = "/orizma-logo.jpg";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);

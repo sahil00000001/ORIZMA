@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Power } from "lucide-react";
 
-const heroImage = "/images/hero-tv.png";
+const heroImage = "/images/hero-tv.webp";
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();

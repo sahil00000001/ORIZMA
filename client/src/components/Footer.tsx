@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import logo from "@assets/orizma-logo.png";
+
+const logo = "/orizma-logo.jpg";
 
 export default function Footer() {
   const productLinks = [
@@ -34,13 +35,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
-            <Link href="/">
-              <img 
-                src={logo} 
-                alt="ORIZMA" 
-                className="h-8 mb-6 hover:opacity-80 transition-opacity"
-                data-testid="img-footer-logo"
-              />
+            <Link href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
+              <img src={logo} alt="ORIZMA" className="h-8" data-testid="img-footer-logo" />
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-sm" data-testid="text-footer-description">
               Redefining home entertainment with cutting-edge technology and stunning design.
