@@ -8,7 +8,10 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Wifi, Mic, Tv, Volume2, Smartphone, Monitor, Award, Truck, Headphones, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import { useLocation } from "wouter";
-import { products } from "@/lib/productData";
+import img32 from "@assets/32-gt_1768934556745.webp";
+import img43 from "@assets/43-gt_1768934556746.webp";
+import img55 from "@assets/55-gt_1768934556746.webp";
+import img65 from "@assets/65-GT_1768934556747.webp";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -16,25 +19,25 @@ export default function Home() {
   const categories = [
     { 
       size: '32"', 
-      images: products.filter(p => p.size === "32").map(p => p.image),
+      image: img32,
       modelCount: 4, 
       priceRange: "₹15,999" 
     },
     { 
       size: '43"', 
-      images: products.filter(p => p.size === "43").map(p => p.image),
+      image: img43,
       modelCount: 4, 
       priceRange: "₹30,990" 
     },
     { 
       size: '55"', 
-      images: products.filter(p => p.size === "55").map(p => p.image),
+      image: img55,
       modelCount: 2, 
       priceRange: "₹55,999" 
     },
     { 
       size: '65"', 
-      images: products.filter(p => p.size === "65").map(p => p.image),
+      image: img65,
       modelCount: 2, 
       priceRange: "₹65,999" 
     },

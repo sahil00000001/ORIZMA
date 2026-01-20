@@ -1,75 +1,86 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
-import { Power } from "lucide-react";
+import { useState, useEffect } from "react";
 
-const heroImage = "/images/hero-tv.webp";
+const heroImages = [
+  "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__herobanner1.webp",
+  "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__herobanner4.webp",
+  "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__herobanner3.webp",
+  "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__Herobanner2.webp",
+];
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-background via-background to-background/95 pt-20">
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <div className="relative w-full max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="w-full relative"
-          >
-            <img
-              src={heroImage}
-              alt="ORIZMA Premium Television"
-              className="w-full h-auto"
-            />
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="absolute top-8 left-0 right-0 text-center z-20"
-            >
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Power className="h-8 w-8 text-primary" />
-                <h2 className="text-2xl font-bold text-foreground tracking-wider">ORIZMA</h2>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight px-4">
-                BRING THE CINEMA HOME
-              </h1>
-              
-              <p className="text-lg md:text-xl lg:text-2xl font-light text-muted-foreground tracking-wide">
-                Where every frame feels alive.
-              </p>
-            </motion.div>
+    <section className="relative w-full h-screen overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={heroImages[currentIndex]}
+            alt="ORIZMA Premium Television"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40" />
+        </motion.div>
+      </AnimatePresence>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="absolute bottom-32 md:bottom-40 left-0 right-0 flex gap-4 flex-wrap justify-center z-20 px-4"
-            >
-              <Button
-                size="lg"
-                className="neon-glow px-8 text-lg hover-elevate active-elevate-2"
-                data-testid="button-shop-4k"
-                onClick={() => setLocation("/products")}
-              >
-                Shop 4K Series
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 text-lg backdrop-blur-md bg-background/20 border-primary/50 hover-elevate active-elevate-2"
-                data-testid="button-discover"
-              >
-                Discover the Difference
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {heroImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`h-1 rounded-full transition-all duration-500 ${
+              idx === currentIndex 
+                ? "w-12 bg-primary" 
+                : "w-6 bg-white/30 hover:bg-white/50"
+            }`}
+            data-testid={`button-carousel-dot-${idx}`}
+          />
+        ))}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="absolute bottom-32 left-0 right-0 flex gap-4 flex-wrap justify-center z-20 px-4"
+      >
+        <Button
+          size="lg"
+          className="neon-glow px-8 text-lg hover-elevate active-elevate-2"
+          data-testid="button-shop-4k"
+          onClick={() => setLocation("/products")}
+        >
+          Explore Collection
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="px-8 text-lg backdrop-blur-md bg-background/20 border-white/30 hover:border-white/50 hover-elevate active-elevate-2"
+          data-testid="button-discover"
+          onClick={() => setLocation("/products")}
+        >
+          View All Models
+        </Button>
+      </motion.div>
     </section>
   );
 }
