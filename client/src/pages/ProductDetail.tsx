@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
+import ProductImageGallery from "@/components/ProductImageGallery";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
@@ -190,15 +191,11 @@ export default function ProductDetail() {
               className="relative"
             >
               <div className="sticky top-24">
-                <div className="relative rounded-lg overflow-hidden bg-card/50 backdrop-blur-sm p-8">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    loading="lazy"
-                    className="w-full h-auto hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
-                </div>
+                <ProductImageGallery 
+                  images={product.images || []} 
+                  staticImage={product.image}
+                  alt={product.name} 
+                />
               </div>
             </motion.div>
 

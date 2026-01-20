@@ -1,0 +1,60 @@
+So hi basically what we need to do actually we have I have removed all the previous. Images and we need to like replace them with the proper. I'll give you the URL of the image that we have to put over there. So the thing is. When I go to the slash products page. We will see all the products. That will be sharing. So in that we need to implement a carousel. That will be really, really smooth. So you need to implement that so in that particular. If I'll give you the image links. You have to like display all the image in the form of carousel and when we like. Over on it the image the carousel me should be stopped. And once I remove it. Then again it should be started. Also make sure that the. Some images are like Big Short. Big and short, so the placeholder for behind the image. Should not change and the image should be like. Fix according to that. So we will have a premium kind of. Experience over there. So for the first product that is. Also when we go to that particular product section. Instead of showing all the images in form of carousel we will show a image in little big on top and rest will show all the images and under the that images This we have to implement for all the Products..
+
+ORT32 PRO
+
+Links for the images are.
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inch1.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inchmeasure.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32lifestyle1.webp
+
+
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp
+
+
+
+
+ORT32 PRIME
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inch2.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inchmeasure.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32lifestyle2.webp
+
+
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp
+
+
+
+
+ORT32 MAX
+
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inch3.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inchmeasure.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32lifestyle3.webp
+
+
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp
+
+https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp
+
+

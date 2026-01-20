@@ -1,24 +1,9 @@
-const tv32Pro = "/images/32-pro.webp";
-const tv32Prime = "/images/32-prime.webp";
-const tv32Max = "/images/32-max.webp";
-const tv32Gt = "/images/32-gt.webp";
-
-const tv43Pro = "/images/43-pro.webp";
-const tv43Prime = "/images/43-prime.webp";
-const tv43Max = "/images/43-max.webp";
-const tv43Gt = "/images/43-gt.webp";
-
-const tv55Max = "/images/55-max.webp";
-const tv55Gt = "/images/55-gt.webp";
-
-const tv65Max = "/images/65-Max.webp";
-const tv65Gt = "/images/65-GT.webp";
-
 export interface Product {
   id: string;
   name: string;
   price: string;
   image: string;
+  images: string[];
   size: string;
   screenSize: string;
   resolution: string;
@@ -28,12 +13,22 @@ export interface Product {
   description?: string;
 }
 
+const githubBase = "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images";
+
 export const products: Product[] = [
   {
     id: "ort32-pro",
     name: "ORT32 PRO",
     price: "₹15,999",
-    image: tv32Pro,
+    image: `${githubBase}/AnyConv.com__32inch1.webp`,
+    images: [
+      `${githubBase}/AnyConv.com__32inch1.webp`,
+      `${githubBase}/AnyConv.com__32lifestyle1.webp`,
+      `${githubBase}/AnyConv.com__32inchmeasure.webp`,
+      `${githubBase}/AnyConv.com__specification1.webp`,
+      `${githubBase}/AnyConv.com__specification2.webp`,
+      `${githubBase}/AnyConv.com__insidethebox.webp`,
+    ],
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -53,7 +48,15 @@ export const products: Product[] = [
     id: "ort32-prime",
     name: "ORT32 PRIME",
     price: "₹16,999",
-    image: tv32Prime,
+    image: `${githubBase}/AnyConv.com__32inch2.webp`,
+    images: [
+      `${githubBase}/AnyConv.com__32inch2.webp`,
+      `${githubBase}/AnyConv.com__32lifestyle2.webp`,
+      `${githubBase}/AnyConv.com__32inchmeasure.webp`,
+      `${githubBase}/AnyConv.com__specification1.webp`,
+      `${githubBase}/AnyConv.com__specification2.webp`,
+      `${githubBase}/AnyConv.com__insidethebox.webp`,
+    ],
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -74,7 +77,15 @@ export const products: Product[] = [
     id: "ort32-max",
     name: "ORT32 MAX",
     price: "₹18,999",
-    image: tv32Max,
+    image: `${githubBase}/AnyConv.com__32inch3.webp`,
+    images: [
+      `${githubBase}/AnyConv.com__32inch3.webp`,
+      `${githubBase}/AnyConv.com__32lifestyle3.webp`,
+      `${githubBase}/AnyConv.com__32inchmeasure.webp`,
+      `${githubBase}/AnyConv.com__specification1.webp`,
+      `${githubBase}/AnyConv.com__specification2.webp`,
+      `${githubBase}/AnyConv.com__insidethebox.webp`,
+    ],
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -95,7 +106,15 @@ export const products: Product[] = [
     id: "ort32-gt",
     name: "ORT32 GT",
     price: "₹20,999",
-    image: tv32Gt,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inch4.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inch4.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32lifestyle4.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__32inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "32",
     screenSize: '80cm (32")',
     resolution: "1366 X 768 HD",
@@ -124,7 +143,15 @@ export const products: Product[] = [
     id: "ort43-pro",
     name: "ORT43 PRO",
     price: "₹30,990",
-    image: tv43Pro,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch1.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43lifestyle2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -144,7 +171,15 @@ export const products: Product[] = [
     id: "ort43-prime",
     name: "ORT43 PRIME",
     price: "₹31,990",
-    image: tv43Prime,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch2.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43lifestyle2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -165,7 +200,15 @@ export const products: Product[] = [
     id: "ort43-max",
     name: "ORT43 MAX",
     price: "₹33,990",
-    image: tv43Max,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch3.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch3.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43lifestyle3.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -186,7 +229,15 @@ export const products: Product[] = [
     id: "ort43-gt",
     name: "ORT43 GT",
     price: "₹35,990",
-    image: tv43Gt,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch4.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inch4.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43lifestyle4.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__43inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "43",
     screenSize: '109cm (43")',
     resolution: "1920 X 1080 FHD",
@@ -215,7 +266,15 @@ export const products: Product[] = [
     id: "ort55-max",
     name: "ORT55 MAX",
     price: "₹55,999",
-    image: tv55Max,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inch1.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inch1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55lifestyle1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "55",
     screenSize: '140cm (55")',
     resolution: "4K UHD HDR 10",
@@ -236,7 +295,15 @@ export const products: Product[] = [
     id: "ort55-gt",
     name: "ORT55 GT",
     price: "₹58,999",
-    image: tv55Gt,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inch2.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inch2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55lifestyle2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__55inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "55",
     screenSize: '140cm (55")',
     resolution: "4K UHD HDR 10",
@@ -265,7 +332,15 @@ export const products: Product[] = [
     id: "ort65-max",
     name: "ORT65 MAX",
     price: "₹65,999",
-    image: tv65Max,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inch1.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inch1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65lifestyle1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "65",
     screenSize: '165cm (65")',
     resolution: "4K UHD HDR 10",
@@ -286,7 +361,15 @@ export const products: Product[] = [
     id: "ort65-gt",
     name: "ORT65 GT",
     price: "₹68,999",
-    image: tv65Gt,
+    image: "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inch2.webp",
+    images: [
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inch2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65lifestyle2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__65inchmeasure.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification1.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__specification2.webp",
+      "https://raw.githubusercontent.com/sahil00000001/ORIZMA/refs/heads/main/attached_assets/New_Images/AnyConv.com__insidethebox.webp",
+    ],
     size: "65",
     screenSize: '165cm (65")',
     resolution: "4K UHD HDR 10",

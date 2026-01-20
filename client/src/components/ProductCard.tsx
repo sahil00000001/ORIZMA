@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import ProductImageCarousel from "./ProductImageCarousel";
 
 interface ProductCardProps {
   name: string;
   price: string;
   image: string;
+  images?: string[];
   screenSize: string;
   resolution: string;
   tier: "PRO" | "PRIME" | "MAX" | "GT";
@@ -28,6 +30,7 @@ export default function ProductCard({
   name,
   price,
   image,
+  images = [],
   screenSize,
   resolution,
   tier,
@@ -46,18 +49,15 @@ export default function ProductCard({
       className="h-full"
     >
       <Card className="overflow-hidden group cursor-pointer h-full flex flex-col bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all duration-300" onClick={onClick}>
-        <div className="relative aspect-[4/3] bg-gradient-to-br from-background/50 to-background/30 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-700" />
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-xl" />
-          </div>
-          <img
-            src={image}
-            alt={name}
-            loading="lazy"
-            className="relative w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700"
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 group-hover:from-primary/10 group-hover:to-accent/10 transition-all duration-700 pointer-events-none z-10" />
+          <ProductImageCarousel 
+            images={images} 
+            staticImage={image} 
+            alt={name} 
+            autoPlayInterval={3000} 
           />
-          <Badge className={`absolute top-4 right-4 font-bold border ${tierColors[tier]}`}>
+          <Badge className={`absolute -bottom-3 left-6 font-bold border z-20 ${tierColors[tier]}`}>
             {tier}
           </Badge>
         </div>
