@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-const logo = "/orizma-logo.jpg";
+const logo = "/orizma-logo.png";
 
 export default function Footer() {
   const productLinks = [

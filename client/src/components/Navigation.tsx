@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const logo = "/orizma-logo.jpg";
+const logo = "/orizma-logo.png";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,14 +28,12 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-md border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link href="/" className="hover:opacity-80 transition-opacity" data-testid="link-logo">
-            <img src={logo} alt="ORIZMA" className="h-8" />
+            <img src={logo} alt="ORIZMA" className="object-contain mt-4" style={{ height: '10.5rem' }} />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
