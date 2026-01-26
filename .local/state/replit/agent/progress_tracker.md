@@ -328,6 +328,7 @@
     - All migration tasks completed successfully
     - Import process fully completed ✓
 [x] 38. Vercel Deployment Configuration:
+    - Fixed Vercel "build" directory issue by explicitly setting outputDirectory to "dist/public"
     - Simplified vercel.json for Vercel's Zero Config deployment
     - Removed legacy "builds" and "@vercel/node" runtime identifiers
     - Updated api/index.ts to use simplified exports
