@@ -47,15 +47,28 @@ app.use((req, res, next) => {
   });
 
   // Serve static files from the build directory
-  const distPath = path.resolve(process.cwd(), "dist/public");
+  const distPath = path.resolve(process.cwd(), "dist", "public");
   if (fs.existsSync(distPath)) {
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.resolve(distPath, "index.html"));
     });
   } else {
+    // Fallback for Vercel deployment where files might be in a different spot
+    const alternativeDistPath = path.resolve(process.cwd(), "public");
+    if (fs.existsSync(alternativeDistPath)) {
+       app.use(express.static(alternativeDistPath));
+    }
+    
     app.get("*", (req, res) => {
-      res.status(404).send("Build directory not found. Make sure to run 'npm run build' first.");
+      // On Vercel, if the file isn't found in dist/public, it might be served as a static asset already
+      // but we handle the fallback to index.html for client-side routing
+      const indexPath = path.resolve(process.cwd(), "dist", "public", "index.html");
+      if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+      } else {
+        res.status(404).send("Build directory not found. Make sure to run 'npm run build' first.");
+      }
     });
   }
 })();
