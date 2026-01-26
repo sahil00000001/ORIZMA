@@ -329,7 +329,7 @@
     - Import process fully completed ✓
 [x] 38. Vercel Deployment Configuration:
     - Created vercel.json for deployment rewrites and function configuration
-    - Fixed vercel.json runtime version (using vercel-node@20)
+    - Removed explicit runtime version from vercel.json to resolve "Function Runtimes" error
     - Created api/index.ts as the serverless entry point for Vercel
     - Updated server/index.ts to export the app for serverless use
     - Optimized vite.config.ts paths using process.cwd() for deployment compatibility
