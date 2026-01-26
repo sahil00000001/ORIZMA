@@ -12,7 +12,7 @@
   ],
   "functions": {
     "api/index.ts": {
-      "runtime": "vercel-nodejs@20"
+      "runtime": "vercel-node@20"
     }
   }
 }
